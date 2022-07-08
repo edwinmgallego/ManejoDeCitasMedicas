@@ -1,3 +1,5 @@
+package model;
+
 public class Patient  extends User{
     //Atributos
 
@@ -11,9 +13,10 @@ public class Patient  extends User{
 
 
 
-    Patient(String name, String email){
+    public Patient(String name, String email){
+
         super(name,email);
-        System.out.println("El nombre del Doctor asignado es: " + name);
+        System.out.println("El nombre del model.Doctor asignado es: " + name);
 
     }
 
@@ -50,5 +53,15 @@ public class Patient  extends User{
 
     public void setBlood(String blood) {
         this.blood = blood;
+    }
+
+    @Override
+    public String toString() {
+        return "model.Patient{" +
+                "Birthday='" + Birthday + '\'' +
+                ", height=" + getHeight() +
+                ", weight=" + getWeight() +
+                ", blood='" + blood + '\'' +
+                '}';
     }
 }

@@ -1,17 +1,16 @@
+package model;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor  extends  User{
-    //Atributos
-    Doctor(String name, String email){
-        super(name, email);
-        System.out.println("El nombre del Doctor asignado es: " + name);
-
-        this.speciality = speciality;
-    }
-
+public class Doctor extends User {
+    //Atributo
     private String speciality;
 
+    public Doctor(String name, String email){
+        super(name,email);
+        System.out.println("El nombre del model.Doctor asignado es: " + name);
+        this.speciality = speciality;
+    }
 
     public String getSpeciality() {
         return speciality;
@@ -22,14 +21,7 @@ public class Doctor  extends  User{
     }
 
 
-
-    //Comportamientos
-
-    //arreglo de coleccion de  objetos   donde  se colocan   las  disponibilidad del doctor.
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
-
-    //metodo que recibe  los datos!
-    //metodo  donde se agrega  las  citas  diponibles
     public void addAvailableAppointment(Date date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
     }
@@ -38,9 +30,12 @@ public class Doctor  extends  User{
         return availableAppointments;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\nSpeciality: " + speciality + "\nAvailable: " + availableAppointments.toString();
+    }
 
 
-    //aqca  se  encuentra  la  clase  anidada.
     public static class AvailableAppointment{
         private int id;
         private Date date;
@@ -74,6 +69,13 @@ public class Doctor  extends  User{
         public void setTime(String time) {
             this.time = time;
         }
+
+
+        @Override
+        public String toString() {
+            return "Available Appointments \nDate: " +date+ "\nTime: " + time;
+        }
     }
 
 }
+

@@ -1,3 +1,5 @@
+package model;
+
 public class User {
     private int id;
     private String name;
@@ -54,7 +56,18 @@ public class User {
             this.phoneNumber = phoneNumber;
         }
     }
+
+    @Override
+    public String toString() {
+        return "model.User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
     }
+}
 
 
 
