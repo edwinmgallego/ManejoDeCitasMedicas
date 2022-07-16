@@ -25,8 +25,6 @@ public class Patient  extends User{
         this.weight=weight;
     }
 
-
-
     public String getBirthday() {
         return Birthday;
     }
@@ -63,5 +61,11 @@ public class Patient  extends User{
                 ", weight=" + getWeight() +
                 ", blood='" + blood + '\'' +
                 '}';
+    }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("paciente del hospital: Cruz Verde");
+        System.out.println("Departamentos: Oncología");
     }
 }
