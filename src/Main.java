@@ -2,21 +2,20 @@ import model.Doctor;
 import model.Patient;
 import model.User;
 
-import java.util.Date;
+import static ui.UIMenu.showMenu;
 
 public class Main {
     public static void main(String[] args) {
 
-        //showMenu();
+        showMenu();
 
         Doctor myDoctor = new Doctor("Anahí Salgado", "anahi@anahi.com");
-        myDoctor.addAvailableAppointment(new Date(), "4pm");
-        myDoctor.addAvailableAppointment(new Date(), "10am");
-        myDoctor.addAvailableAppointment(new Date(), "1pm");
+
         User user = new Doctor("Anahí Salgado", "anahi@anahi.com");
         user.showDataUser();
         User userPa = new Patient("Anahí lopez", "ana@ana.com");
         userPa.showDataUser();
+
         //System.out.println(myDoctor);
         /*
 
